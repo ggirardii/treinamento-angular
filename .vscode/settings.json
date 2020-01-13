@@ -1,0 +1,12 @@
+{
+  "gitflow4code.features": [
+    {
+      "name": "feature/implementacoes-bascias",
+      "base": "develop"
+    },
+    {
+      "name": "feature/implementacoes-basicas",
+      "base": "develop"
+    }
+  ]
+}
