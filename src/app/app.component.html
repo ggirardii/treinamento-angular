@@ -15,9 +15,12 @@
       <tr *ngFor="let musica of musicas">
         <td>{{musica.nome}}</td>
         <td>{{musica.autor}}</td>
-        <td>{{musica.album | uppercase}}</td>
-        <td>{{musica.dataLancamento | date : 'dd/MM/yyyy'}}</td>
+        <td *ngIf="musica.album !== '' else semConteudo">{{musica.album | uppercase}}</td>
+        <td *ngIf="musica.dataLancamento !== undefined else semConteudo">{{musica.dataLancamento | date : 'dd/MM/yyyy'}}</td>
       </tr>
     </tbody>
   </table>
 </div>
+<ng-template #semConteudo>
+  <td class="desconhecido">Desconhecido</td>
+</ng-template>
