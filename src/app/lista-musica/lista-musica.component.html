@@ -1,0 +1,26 @@
+<div class="text-center titulo">
+    <h1>{{titulo}}</h1>
+  </div>
+  <div class="grid-container">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">Música</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Álbum</th>
+          <th scope="col">Data Lançamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let musica of musicas">
+          <td>{{musica.nome}}</td>
+          <td>{{musica.autor}}</td>
+          <td *ngIf="musica.album !== '' else semConteudo">{{musica.album | uppercase}}</td>
+          <td *ngIf="musica.dataLancamento !== undefined else semConteudo">{{musica.dataLancamento | date : 'dd/MM/yyyy'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #semConteudo>
+    <td class="desconhecido">Desconhecido</td>
+  </ng-template>
