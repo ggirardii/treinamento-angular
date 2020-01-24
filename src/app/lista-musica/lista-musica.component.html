@@ -5,10 +5,11 @@
     <table class="table table-bordered table-striped">
       <thead>
         <tr class="text-center">
-          <th scope="col">Música</th>
-          <th scope="col">Autor</th>
-          <th scope="col">Álbum</th>
-          <th scope="col">Data Lançamento</th>
+          <th>Música</th>
+          <th>Autor</th>
+          <th>Álbum</th>
+          <th>Data Lançamento</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -17,6 +18,7 @@
           <td>{{musica.autor}}</td>
           <td *ngIf="musica.album !== '' else semConteudo">{{musica.album | uppercase}}</td>
           <td *ngIf="musica.dataLancamento !== undefined else semConteudo">{{musica.dataLancamento | date : 'dd/MM/yyyy'}}</td>
+          <td class="text-center"><button class="btn btn-deletar" (click)="removerMusica(musica)">X</button></td>
         </tr>
       </tbody>
     </table>
