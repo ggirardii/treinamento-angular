@@ -7,6 +7,14 @@
     {
       "name": "feature/implementacoes-basicas",
       "base": "develop"
+    },
+    {
+      "name": "feature/subscribe",
+      "base": "develop"
+    },
+    {
+      "name": "feature/subscribe",
+      "base": "develop"
     }
   ]
 }

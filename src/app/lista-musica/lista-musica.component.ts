@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Musica } from '../models/musica.model';
+import { MusicaAdicionar } from '../models/musica-adicionar.model';
 
 @Component({
   selector: 'app-lista-musica',
@@ -10,9 +11,18 @@ export class ListaMusicaComponent implements OnInit {
 
   @Input() titulo : string;
   @Input() musicas : Array<Musica> = new Array<Musica>();
-
+  musicaAdicionar : MusicaAdicionar = new MusicaAdicionar();
   constructor() { }
   ngOnInit(): void {
   }
 
+  removerMusica(musica : Musica) : void {
+    this.musicas = this.musicas.filter(x => x.id != musica.id);
+  }
+
+  adicionarMusica(){
+    let proximoId = this.musicas[this.musicas.length - 1].id + 1;
+    let musica = new Musica(proximoId, this.musicaAdicionar.nome, this.musicaAdicionar.autor, this.musicaAdicionar.album);
+    this.musicas.push(musica);
+  }
 }

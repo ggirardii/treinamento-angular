@@ -7,3 +7,11 @@
 .desconhecido{
   color: rgba($color: black, $alpha: 0.3);
 }
+.btn.btn-deletar{
+  background-color: lightgray;
+  color: white;
+  font-weight: bold;
+}
+.btn.btn-deletar:hover{
+  background-color: red;
+}
