@@ -17,7 +17,7 @@ export class ListaMusicaComponent implements OnInit {
   }
 
   removerMusica(musica : Musica) : void {
-    this.musicas = this.musicas.filter(x => x.id != musica.id);
+    this.musicas.splice(this.musicas.findIndex(x => x.id === musica.id), 1);
   }
 
   adicionarMusica(){
