@@ -12,6 +12,7 @@ export class ListaMusicaComponent implements OnInit {
   @Input() titulo : string;
   @Input() musicas : Array<Musica> = new Array<Musica>();
   musicaAdicionar : MusicaAdicionar = new MusicaAdicionar();
+  musicaSelecionada : Musica;
   constructor() { }
   ngOnInit(): void {
   }
@@ -24,5 +25,14 @@ export class ListaMusicaComponent implements OnInit {
     let proximoId = this.musicas[this.musicas.length - 1].id + 1;
     let musica = new Musica(proximoId, this.musicaAdicionar.nome, this.musicaAdicionar.autor, this.musicaAdicionar.album);
     this.musicas.push(musica);
+    this.musicaAdicionar = new MusicaAdicionar();
+  }
+
+  selecionarMusica(musica : Musica) : void {
+    this.musicaSelecionada = musica;
+  }
+
+  finalizarEdicao() : void {
+    this.musicaSelecionada = undefined;
   }
 }
