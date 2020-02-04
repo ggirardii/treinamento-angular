@@ -23,6 +23,7 @@ Projeto realizado para o nivelamento da equipe de Logística no Havan Labs.
 - Modal 
 - Modulos
 - Rotas
+- Reactive Forms
 - Chamadas http
 - Subscribe
 - Environments
